@@ -1,3 +1,14 @@
+:root {
+    /* primary */
+    --sapphire: hsl(226.9, 97.8%, 17.5%);
+    --crimson: hsl(345.1, 100%, 41.2%);
+    --tangerine: hsl(28.8, 100%, 50.6%);
+    --cabaret: hsl(350.2, 62.2%, 57.5%);
+
+    /* neutral */
+    --white: hsl(0, 0%, 100%);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,37 +19,41 @@
 html,
 body {
     display: grid;
-    height: 100%;
+    background: linear-gradient(375deg, var(--sapphire), var(--crimson));
     width: 100%;
+    height: 100%;
     place-items: center;
-    background: linear-gradient(375deg, #F9B208, #F98404);
+}
+
+p {
+    color: var(--white);
 }
 
 ::selection {
-    color: #fff;
-    background: #F9B208;
+    background: var(--sapphire);
+    color: var(--white);
 }
 
 .wrapper {
-    height: 400px;
-    width: 320px;
     position: relative;
+    width: 20rem;
+    height: 25rem;
+    perspective: 62.5rem;
     transform-style: preserve-3d;
-    perspective: 1000px;
 }
 
 .wrapper .card {
-    height: 100%;
-    width: 100%;
+    background: var(--tangerine);
     position: absolute;
-    background: #F7FD04;
-    border-radius: 10px;
-    transform: translateY(0deg);
+    padding: 0.312rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.62rem;
+    box-shadow: 0px 10px 15px hsl(0, 0, 0, 0.1);
     backface-visibility: hidden;
-    padding: 5px;
+    transform: translateY(0deg);
     transform-style: preserve-3d;
     transition: 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 .wrapper:hover>.front-face {
@@ -46,17 +61,17 @@ body {
 }
 
 .wrapper .card img {
-    height: 100%;
     width: 100%;
+    height: 100%;
+    border-radius: 0.62rem;
     object-fit: cover;
-    border-radius: 10px;
 }
 
 .wrapper .back-face {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-evenly;
+    align-items: center;
     transform: rotateY(180deg);
 }
 
@@ -65,11 +80,11 @@ body {
 }
 
 .wrapper .back-face img {
-    height: 150px;
-    width: 150px;
+    background: linear-gradient(375deg, var(--sapphire), var(--crimson));
+    padding: 0.312rem;
+    width: 9.37rem;
+    height: 9.37rem;
     border-radius: 50%;
-    padding: 5px;
-    background: linear-gradient(375deg, #F9B208, #F98404);
 }
 
 .wrapper .back-face .info {
@@ -77,7 +92,8 @@ body {
 }
 
 .back-face .info .title {
-    font-size: 30px;
+    color: var(--white);
+    font-size: 1.87rem;
     font-weight: 500;
 }
 
@@ -87,20 +103,20 @@ body {
 
 .back-face ul a {
     display: block;
-    height: 40px;
-    width: 40px;
-    background: linear-gradient(375deg, #F9B208, #F98404);
+    background: linear-gradient(375deg, var(--sapphire), var(--crimson));
+    color: var(--cabaret);
     text-align: center;
-    border: 2px solid transparent;
-    line-height: 38px;
-    margin: 0 5px;
+    line-height: 2.37rem;
+    margin: 0 0.312rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
-    color: red;
+    border: 2px solid transparent;
     transition: all 0.5s ease;
 }
 
 .back-face ul a:hover {
     background: linear-gradient(375deg, transparent, transparent);
-    color: #FC5404;
-    border-color: #F9B208;
+    color: var(--crimson);
+    border-color: var(--sapphire);
 }
