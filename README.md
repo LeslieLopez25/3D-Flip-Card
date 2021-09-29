@@ -6,7 +6,7 @@
 
 ### Link
 
-- Live Site: [Music Player](https://leslielopez25.github.io/3D-Flip-Card/)
+- Live Site: [3D Flip Card](https://leslielopez25.github.io/3D-Flip-Card/)
 
 ### Screenshot
 
